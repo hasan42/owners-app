@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { HomePage } from "./components/pages/home-page";
+
+// class App extends Component {
+//   render() {
+//     let routes = (
+//       <Switch>
+//         <Route path="/" exact component={HomePage} />
+//         <Redirect to="/" />
+//       </Switch>
+//     );
+
+//     return { routes };
+//   }
+// }
+
+// export default withRouter(App);
+
+const App = () => (
+  <Router>
+    <Suspense fallback={<div>Загрузка...</div>}>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+      </Switch>
+    </Suspense>
+  </Router>
+);
 
 export default App;

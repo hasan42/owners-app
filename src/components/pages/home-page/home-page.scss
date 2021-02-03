@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-control {
+  display: flex;
+  flex-direction: row;
+
+  > button + button {
+    margin-left: 12px;
+  }
+}
