@@ -1,6 +1,8 @@
 .aside {
-  width: 250px;
-  height: calc(100vh - 43px - 45px);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  min-width: 177px;
   padding: 43px 40px 45px 33px;
   background: linear-gradient(175.93deg, #5f00d8 -10.23%, #b200f1 117.03%);
 }
